@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">GPC Control</title>
+  <desc id="desc">Deep blue-teal GPC Control mark</desc>
+  <rect width="512" height="512" rx="80" fill="#102C37"/>
+  <rect x="96" y="96" width="320" height="320" fill="none" stroke="#B5E3DC" stroke-width="12"/>
+  <path d="M146 338H366" stroke="#7FCBC3" stroke-width="12"/>
+  <text x="256" y="286" text-anchor="middle" fill="#FFFFFF" font-family="Georgia, serif" font-size="94" letter-spacing="5">GPC</text>
+</svg>

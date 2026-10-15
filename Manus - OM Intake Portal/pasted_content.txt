@@ -1,0 +1,108 @@
+
+Claude Desktop (macOS), Connected
+/
+i also want to be able to rename and delete saved reports
+
+Ran 8 commands
+Now a local test of rename + delete, building on the t25 test.
+
+Ran 2 commands
+nevermind i see that i already can
+
+Ran 5 commands, read a file, and 3 more tools
+The autosave update is now live on the portal. I also added a Rename button for saved reports, since that was the one piece that wasn’t there yet. Delete already existed, which is probably what you saw. The server started cleanly with sign-in still required and no unpack errors. I couldn’t open the live site from here to click through it, so all the testing below was on a local copy.
+
+Autosave:
+
+A report is created in Saved reports as soon as someone starts work on a property (uploads the OM or seller files). It’s marked “in progress” until “Save report” is clicked.
+Every edit saves within a couple of seconds. A line under Saved reports shows “All changes saved” with the time, or “Saving…”.
+Refreshing or closing the page doesn’t lose anything. The page keeps a backup copy in the browser and reopens the same report with “Picked up where you left off”.
+“Save report” updates that same report with a freshly filled Excel model instead of making a duplicate.
+Opening someone else’s report changes nothing. The first edit makes a separate copy for the person editing, so the original stays as it was.
+Rename: each report the user owns (or any report, for an admin) has Open · Rename · Delete. A name someone picks stays put; autosave won’t overwrite it.
+
+In the local test, a renamed report kept its name through edits and a page refresh. Delete removed the report and turned off autosave for it, with no page errors.
+
+Used a tool
+That reminder was the one I set earlier to finish the autosave deploy, and the deploy is already done, so there’s nothing left to do on it. The version now on the portal is newer than the one the reminder mentions: it has autosave plus the Rename button.
+
+i dont' want to have to hit save report - i just want it to save the report initially with the naming convention "PropertyName_Date"
+
+Ran 3 commands
+Now rebuild and test locally.
+
+Ran 5 commands
+In one of the test portfolios I ran, it didn't find the name of the property when it was clearly obviously in the offering memoradum.   If this happens in the future, I want to be able to manually input data points.
+
+Ran 7 commands
+Read 2 files, ran 3 commands, used Railway integration
+make a version of the model excel that i uploaded to where you have the capability to edit.  In that model, I need to you create a scenario 4 tab after the 3 tab and fill in the same respective fashion that scenario 3 was created
+
+whats the hold up
+
+Sorry for the wait. Pasting the build into Railway takes a while because the file is large. It just went through, and I’m checking that it started. After that I’ll start on the Scenario 4 tab in your model.
+
+Ran 21 commands, used Railway integration, and 6 more tools
+The portal update is live, and I’ve sent you the template with Scenario 4 added. The site started cleanly, but I couldn’t open it from here, so everything below was tested on a local copy.
+
+Scenario 4 in the template (GPC Underwriting Model Template v5): the new tab sits right after Scenario 3 and is laid out exactly the same way. It reads its own Scenario 4 section on the Unit Mix tab (columns AK–AP). For now that section is an exact copy of Scenario 3, so it gives the same numbers until you change it. Nothing else in the template was touched. The Dashboard and summary tabs don’t pull in Scenario 4 yet, same as the Cambridge Court model.
+
+Scenario 4 in the portal: the portal was already adding a Scenario 4 (Max Net LIHTC) to the Excel models it fills in. It was being tacked on at the end of the workbook and still pointed at Scenario 3 in some formulas and its title. It now goes right after Scenario 3 and is fully its own tab. When a rent roll has no LIHTC limits, it falls back to current rents. In a local test, Scenario 4 recalculated cleanly with no errors.
+
+No more Save report: the button is gone. A report is created as soon as you start a property and saves itself as you go.
+
+Name: reports are named PropertyName_MM-DD-YYYY, e.g. Cypress Cove_10-13-2026.
+Excel model: the filled model refreshes on its own as numbers change, at most every 20 seconds.
+Older reports: they get the new name the next time they’re edited, unless someone renamed them by hand.
+Typing in missed data: when the OM reader misses something like the property name, you can click any field in the Property section and type the value. Press Enter to save it or Esc to cancel. Values you type show a “typed in” tag and flow into the report name, the underwriting and the autosave. In the test, a missed name typed in as “Maple Gardens” renamed the report to Maple Gardens_10-13-2026 and was still there after a refresh.
+
+The template file is in this chat. No folder from your computer is connected to this session, so I couldn’t save a copy there.
+
+
+Gpc underwriting model template v5 (with scenario 4)
+Spreadsheet·XLSX 
+since we added a 4th scenario... everywhere it states scenarios 0-3 should now say 0-4
+
+Ran 11 commands, read a file, and 3 more tools
+The update is live: every place in the portal that said “Scenarios 0–3” now says “Scenarios 0–4”. The new version started up normally on Railway. I checked that in the server logs, since I can’t open the site from here.
+
+The changed labels:
+
+Headings: the page header, the subtitle and the Underwriting section heading.
+Running a report: the progress message while the scenarios run, and the name of the scenario-summary Excel download (now “Scenarios 0-4.xlsx”).
+Notes: they now say “All five scenarios” and include a description of Scenario 4. Units with a maximum allowable LIHTC rent go to that rent minus the utility allowance. Voucher units keep whichever is higher, that rent or their Scenario 1 rent. Units without a maximum LIHTC rent stay at current rent. Scenario 4 only appears once the maximum LIHTC rents are filled in.
+A hard refresh will make sure you’re seeing the new labels.
+
+whenever i download the filled model... i see the "page 1" on most of the sheets in the workbook - remove those
+
+????
+
+GPC Template Input Map 2.xlsx
+GPC Template Input Map 2.xlsx
+XLSX
+here is the GPC template input map again
+
+what seems to be the hold up with this?
+
+Ran 4 commands, loaded tools, and 2 more tools
+
+
+
+
+
+
+
+
+index.tsx
+
+GPC Underwriting Model Template v5 (with Scenario 4).xlsx
+
+New tab
+
+
+
+Springfield Crossing files
+Connectors
+
+Railway icon
+Railway
